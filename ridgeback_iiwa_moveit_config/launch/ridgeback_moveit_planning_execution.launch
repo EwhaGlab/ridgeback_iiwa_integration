@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- hardware_interface to use : PositionJointInterface, EffortJointInterface, VelocityJointInterface. -->
+    <arg name="hardware_interface" default="PositionJointInterface"/>
+    <!-- The is gonna have its nodes/topics under a namespace with the same name. -->
+    <arg name="robot_name" default="iiwa"/>
+    <!-- Model of the iiwa to use : iiwa7, iiwa14 -->
+    <arg name="model" default="iiwa7"/>
+
+    <!-- remap from="/$(arg hardware_interface)_trajectory_controller/follow_joint_trajectory"
+           to="/$(arg robot_name)/$(arg hardware_interface)_trajectory_controller/follow_joint_trajectory" / -->
+    <!-- remap from="robot_description" to="/$(arg robot_name)/robot_description" / -->
+    <!-- remap from="/get_planning_scene" to="/$(arg robot_name)/get_planning_scene" / -->
+
+    <!-- Working with the real robot.  -->
+    <group ns="$(arg robot_name)">
+        <!-- Load controllers accordingly to parameters -->
+        <include file="$(find iiwa_control)/launch/iiwa_control.launch">
+            <arg name="hardware_interface" value="$(arg hardware_interface)" />
+            <arg name="controllers" value="joint_state_controller $(arg hardware_interface)_trajectory_controller" />
+            <arg name="robot_name" value="$(arg robot_name)" />
+            <arg name="model" value="$(arg model)" />
+        </include>
+
+        <!-- Robot interface -->
+        <include file="$(find iiwa_hw)/launch/iiwa_hw.launch" >
+            <arg name="hardware_interface" value="$(arg hardware_interface)" />
+        </include>
+    </group>
+
+    <include file="$(find ridgeback_iiwa_moveit_config)/launch/move_group.launch">
+        <arg name="publish_monitored_planning_scene" value="true" />
+        <arg name="hardware_interface" value="$(arg hardware_interface)"/>
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="model" value="$(arg model)" />
+    </include>
+
+    <node pkg="topic_tools" type="relay" name="iiwa_joint_relay" args="/iiwa/joint_states /joint_states" />
+</launch>
