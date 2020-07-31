@@ -27,6 +27,7 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
 
 3. Install the dependencies:
   ```sh
+  cd ..
   rosdep install --from-paths src --ignore-src -r -y
   ```
 
