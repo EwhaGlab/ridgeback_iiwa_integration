@@ -1,6 +1,6 @@
 # Ridgeback + iiwa Integration
 
-*Works on **Ubuntu 18.04** with **ROS Melodic**.*
+*Tested on **Ubuntu 18.04** with **ROS Melodic**.*
 
 <img src="./img/demo.png" width="600">
 
@@ -44,6 +44,7 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
   ```sh
   source devel/setup.bash
   ```
+   You can also add this line in ~/.bashrc, but be aware that this has to be above the line in step 4.
 
 
 ## Demo
