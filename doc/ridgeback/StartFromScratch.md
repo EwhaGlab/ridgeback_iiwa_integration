@@ -17,6 +17,8 @@
     
 4.  Plug in the ISO installer on the USB stick.
     
+	<img src="./MCU_switch.jpg" width="400">
+
 5.  There is a small two-position switch on the Ridgeback MCU board. Switch the Ridgeback MCU from “NORM” to “AUX” mode.
     
 6.  Power on the Ridgeback. The computer may not start up by itself while in AUX mode - force it to boot by pressing the small white button next to the NORM/AUX switch.
@@ -86,28 +88,35 @@ At this point, it should be possible to SSH into the robot instead of using a ke
 	```sh
 	sudo bluetoothctl
 	```
+
+	<img src="./PS4_controller.jpg" width="400">
     
-2.  Put the PS3 controller into pairing mode. Then on the computer type the following commands:
+2.  Put the PS3 controller into pairing mode. Press and hold both the SHARE button and the PS button. The light bar at the top of the controller will start to blink.
+
+
+3. Then on the computer type the following commands:
 	```sh
 	agent on  
 	scan on
 	```
-3. Wait a few seconds, then type
+
+4. Wait a few seconds, then type
 	```sh
 	scan off
 	```
 	At this point you should have a list of pairable devices, along with their hexadecimal addresses. Find the one called Wireless Controller and copy its address.
 
-4. With the controller still in pairing mode, type:
+5. With the controller still in pairing mode, type:
 	```sh
 	trust [address of controller]
 	connect [address of controller]
 	```
 	
-5. If everything worked, then bluetoothctl will indicate that the controller was successfully paired. And, the light on the PS3 controller will turn solid. 
-6. Exit bluetoothctl with the command ``exit``.
+6. If everything worked, then bluetoothctl will indicate that the controller was successfully paired. And, the light on the PS3 controller will turn solid. 
 
+7. Exit bluetoothctl with the command ``exit``.
 
+8. Hold on to the PS button to turn ON/OFF the controller.
 
 ## Last Step
 Turn off the Ridgeback. Flip the NORM/AUX switch back to NORM. Start the Ridgeback again. This should complete the basic bring-up of the system, with the following conditions true:
