@@ -1,13 +1,13 @@
 # Network Setup for Ridgeback
 
-If this is the first time setting up the network connection with your PC, try with a wired connection first. If you have trouble understanding the documentation below, please refer to this [tutorial](http://www.clearpathrobotics.com/assets/guides/melodic/ridgeback/network.html) and [video](https://youtu.be/YMG6DWEqv5g) as supplementary materials.
+Choose either wired or wireless connection you want. If you have trouble understanding the documentation below, please refer to this [tutorial](http://www.clearpathrobotics.com/assets/guides/melodic/ridgeback/network.html) and [video](https://youtu.be/YMG6DWEqv5g) as supplementary materials.
 
 ## Wired connection
 
 1.  Open up the user bay and connect a network cable to your PC. You should give yourself an IP address in `192.168.131.X` space. Make sure the address is not overlapped with your coworkers. Below is an example of how to configure your network:
 
-	|  Address                 | Netmask              | Gateway             |
-	|  :--------------------: | :------------------: | :-----------------: |
+	|  Address           | Netmask         | Gateway         |
+	|  :---------------: | :-------------: | :-------------: |
 	|  192.168.131.*50*  |  255.255.255.0  |  192.168.131.1  |
 
 3. Make the connection to Ridgeback's default static IP:
@@ -18,12 +18,12 @@ If this is the first time setting up the network connection with your PC, try wi
 
 ## Wireless connection
 
-Ridgeback is currently setup to automatically connect to **COM_GR** wifi with a static IP `172.31.1.2` on boot. 
+Ridgeback is currently setup to automatically connect to **COM_GR_5G** wifi with a static IP `172.31.1.2` on boot. 
 
 1. Connect your PC wifi to **COM_GR_5G** and configure a static IP adress in `172.31.1.X` space. Make sure the address is not overlapped with your coworkers. Below is an example of how to configure your network:
 
-	|  Address                 | Netmask              | Gateway             |
-	|  :--------------------: | :------------------: | :-----------------: |
+	|  Address        | Netmask         | Gateway      |
+	|  :------------: | :-------------: | :----------: |
 	|  172.31.1.*50*  |  255.255.255.0  |  172.31.1.1  |
 
 2. Make the connection to Ridgeback's wifi static IP:
@@ -71,7 +71,7 @@ To successfullly configure bidirectional ROS setup, you will need your computer 
 - Check if the Ridgeback is correctly connected to the wifi **COM_GR_5G**.
 - Check if your PC is correctly connected to the wifi **COM_GR_5G**.
 - Check the IP address of Ridgeback with `ifconfig`. 
-- If it is not properly set, set up the network by following [this step](https://github.com/daeunSong/ridgeback_iiwa_integration/new/master/doc/ridgeback#check-if-the-bidirectional-ros-connection-is-succesfully-set) in Ridgeback PC.
+- If it is not properly set, set up the network by following [this step](./StartFromScratch.md#wifi-setup) in Ridgeback PC.
 
 ### Check if the bidirectional ROS connection is succesfully set
 
