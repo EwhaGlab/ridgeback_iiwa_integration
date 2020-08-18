@@ -20,7 +20,7 @@ If this is the first time setting up the network connection with your PC, try wi
 
 Ridgeback is currently setup to automatically connect to **COM_GR** wifi with a static IP `172.31.1.2` on boot. 
 
-1. Connect your PC wifi to **COM_GR** and configure a static IP adress in `172.31.1.X` space. Make sure the address is not overlapped with your coworkers. Below is an example of how to configure your network:
+1. Connect your PC wifi to **COM_GR_5G** and configure a static IP adress in `172.31.1.X` space. Make sure the address is not overlapped with your coworkers. Below is an example of how to configure your network:
 
 	|  Address                 | Netmask              | Gateway             |
 	|  :--------------------: | :------------------: | :-----------------: |
@@ -68,8 +68,8 @@ To successfullly configure bidirectional ROS setup, you will need your computer 
 
 ### If your PC is not able to connect to Ridgeback via wifi
 
-- Check if the Ridgeback is correctly connected to the wifi **COM_GR**.
-- Check if your PC is correctly connected to the wifi **COM_GR**.
+- Check if the Ridgeback is correctly connected to the wifi **COM_GR_5G**.
+- Check if your PC is correctly connected to the wifi **COM_GR_5G**.
 - Check the IP address of Ridgeback with `ifconfig`. 
 - If it is not properly set, set up the network by following [this step](https://github.com/daeunSong/ridgeback_iiwa_integration/new/master/doc/ridgeback#check-if-the-bidirectional-ros-connection-is-succesfully-set) in Ridgeback PC.
 

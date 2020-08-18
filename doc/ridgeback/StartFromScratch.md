@@ -60,6 +60,10 @@ At this point, it should be possible to SSH into the robot instead of using a ke
 	``
 	export RIDGEBACK_FRONT_HOKUYO_LASER=1
 	``
+
+	``
+	export RIDGEBACK_FONT_LASER_HOST=192.168.131.14
+	``
 	
 	 Save and exit the file. 
 
