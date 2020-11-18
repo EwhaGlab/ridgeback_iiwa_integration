@@ -6,7 +6,7 @@ If you have trouble understanding the documentation below, please refer to this 
 
 1. Make sure the ethernet cable is connected to **X66 port** of SUNRISE Cabinet. 
 
-2. **(Wired)** Connect network cable to your PC or **(Wireless)** Connect your PC wifi to **COM_GR_CONI**.   
+2. **(Wired)** Connect network cable to your PC or **(Wireless)** Connect your PC wifi to **COM_GR_KONI**.   
    Below are numbers for IPv4 manual:
 
 	|  Address           | Netmask         | Gateway         |
