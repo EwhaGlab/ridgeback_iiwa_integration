@@ -2,7 +2,7 @@
 
 *Tested on **Ubuntu 18.04** with **ROS Melodic**.*
 
-<img src="./img/demo.png" width="600">
+<img src="./doc/img/demo.png" width="600">
 
 This repository provides our customed ridgeback integration with KUKA LBR iiwa 7 R800 based on [ridgeback_manipulation](https://github.com/ridgeback/ridgeback_manipulation). 
 
