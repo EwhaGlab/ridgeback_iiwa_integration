@@ -6,6 +6,8 @@ If you have trouble understanding the documentation below, please refer to this 
 
 We are setting up your **PC** as a **ROS_MASTER**.
 
+<img src="../img/laptop_iiwa.png" width="300">
+
 1. Make sure the ethernet cable is connected to **X66 port** of SUNRISE Cabinet. 
 
 2. **(Wired)** Connect network cable to your PC or **(Wireless)** Connect your PC wifi to **COM_GR_5G**.   
@@ -23,9 +25,11 @@ We are setting up your **PC** as a **ROS_MASTER**.
    export ROS_MASTER_URI=http://$ROS_IP:11311
   ```
 
-## Working with IIWA ridgeback
+## Working with IIWA + Ridgeback
 
 We are setting up **Ridgeback** as a **ROS_MASTER**.
+
+<img src="../img/ridgeback-iiwa-laptop.png" width="600">
 
 1. Make sure the ethernet cable is connected to **X66 port** of SUNRISE Cabinet. 
 
@@ -34,17 +38,16 @@ We are setting up **Ridgeback** as a **ROS_MASTER**.
 
 	|  Address           | Netmask         | Gateway         |
 	|  :---------------: | :-------------: | :-------------: |
-	|  172.31.1.*50*        |  255.255.255.0  |  192.168.168.0  |
+	|  172.31.1.*150*    |  255.255.255.0  |  192.168.168.0  |
 
-   ⚠️ Make sure the address is not overlapped with your coworkers. Change 50 to anything else but 147 (KUKA cabinet).
-   
+   ⚠️ Make sure the address is not overlapped with your coworkers. Change 150 to anything else but 147 (KUKA cabinet).
    
    Use ```ifconfig``` to check whether network is well setup.
    
 3. Add following to **~/.bashrc**:   
    ```sh
-   export ROS_IP=172.31.1.50 
+   export ROS_IP=172.31.1.150 
    export ROS_MASTER_URI=http://172.31.1.2:11311
    ```
    
-    ⚠️ Make sure that you put the correct IP address that you setup in 2.
+   Make sure that you put the correct ROS_IP address that you setup in 2.

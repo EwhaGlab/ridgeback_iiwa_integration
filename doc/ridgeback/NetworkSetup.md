@@ -18,13 +18,17 @@ Choose either wired or wireless connection you want. If you have trouble underst
 
 ## Wireless connection
 
-Ridgeback is currently setup to automatically connect to **COM_GR_5G** wifi with a static IP `172.31.1.2` on boot. 
+Ridgeback is currently setup to automatically connect to **COM_GR_5G** wifi with a static IP `172.31.1.2` on boot as a **ROS MASTER**.
 
-1. Connect your PC wifi to **COM_GR_5G** and configure a static IP adress in `172.31.1.X` space. Make sure the address is not overlapped with your coworkers. Below is an example of how to configure your network:
+<img src="../img/ridgeback-laptop.png" width="300">
+
+1. Connect your PC wifi to **COM_GR_5G** and configure a static IP adress in `172.31.1.X` space. Below is an example of how to configure your network:
 
 	|  Address        | Netmask         | Gateway      |
 	|  :------------: | :-------------: | :----------: |
-	|  172.31.1.*50*  |  255.255.255.0  |  172.31.1.1  |
+	|  172.31.1.*150*  |  255.255.255.0  |  172.31.1.1  |
+
+    ⚠️ Make sure the address is not overlapped with your coworkers. 
 
 2. Make the connection to Ridgeback's wifi static IP:
 	```sh
@@ -59,7 +63,7 @@ To successfullly configure bidirectional ROS setup, you will need your computer 
 5.  Add an IP address of your PC that you setup in the above process. This is to make sure Ridgeback recognize your PC. Following is an example. Fill it with your IP address and your PC name: 
     
       ``
-      172.31.1.50   laptop
+      172.31.1.150   laptop
       ``
 
 6. Try [troubleshooting step](./NetworkSetup.md#troubleshooting) to make sure you have bidirectional communication.

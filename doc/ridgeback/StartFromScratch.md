@@ -17,7 +17,7 @@
     
 4.  Plug in the ISO installer on the USB stick.
     
-	<img src="./MCU_switch.jpg" width="400">
+	<img src="../img/MCU_switch.jpg" width="400">
 
 5.  There is a small two-position switch on the Ridgeback MCU board. Switch the Ridgeback MCU from “NORM” to “AUX” mode.
     
@@ -93,7 +93,7 @@ At this point, it should be possible to SSH into the robot instead of using a ke
 	sudo bluetoothctl
 	```
 
-	<img src="./PS4_controller.jpg" width="400">
+	<img src="../img/PS4_controller.jpg" width="400">
     
 2.  Put the PS3 controller into pairing mode. Press and hold both the SHARE button and the PS button. The light bar at the top of the controller will start to blink.
 
