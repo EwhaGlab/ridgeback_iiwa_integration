@@ -14,7 +14,7 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
   mkdir ridgeback_iiwa_ws && cd ridgeback_iiwa_ws && mkdir src
   catkin_init_workspace
   cd src
-  git clone https://github.com/IFL-CAMP/iiwa_stack.git
+  git clone https://github.com/daeunSong/iiwa_stack.git
   git clone https://github.com/daeunSong/iiwa_stack_examples.git
   ```
 
