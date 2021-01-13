@@ -1,0 +1,18 @@
+[submodule "iiwa/iiwa_stack"]
+	path = iiwa/iiwa_stack
+	url = https://github.com/daeunSong/iiwa_stack.git
+	branch = glab/drawing
+[submodule "iiwa/iiwa_examples"]
+	path = iiwa/iiwa_examples
+	url = https://github.com/daeunSong/iiwa_examples.git
+[submodule "ridgeback/ridgeback_simulator"]
+	path = ridgeback/ridgeback_simulator
+	url = https://github.com/daeunSong/ridgeback_simulator.git
+	branch = melodic-devel
+[submodule "ridgeback/ridgeback"]
+	path = ridgeback/ridgeback
+	url = https://github.com/daeunSong/ridgeback.git
+	branch = glab/integration
+[submodule "ridgeback/ridgeback_examples"]
+	path = ridgeback/ridgeback_examples
+	url = https://github.com/daeunSong/ridgeback_examples.git
