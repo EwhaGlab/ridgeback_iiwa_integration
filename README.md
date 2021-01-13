@@ -9,20 +9,20 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
 
 ## Installation
 
-1. Clone [iiwa_stack](https://github.com/daeunSong/iiwa_stack) and [iiwa_stack_examples](https://github.com/daeunSong/iiwa_stack_examples) repositories to your workspace:
+1. Clone [iiwa_stack](https://github.com/daeunSong/iiwa_stack/tree/glab/drawing) and [iiwa_stack_examples](https://github.com/daeunSong/iiwa_examples) repositories to your workspace:
   ```sh
   mkdir ridgeback_iiwa_ws && cd ridgeback_iiwa_ws && mkdir src
   catkin_init_workspace
   cd src
-  git clone https://github.com/daeunSong/iiwa_stack.git
-  git clone https://github.com/daeunSong/iiwa_stack_examples.git
+  git clone https://github.com/daeunSong/iiwa_stack/tree/glab/drawing.git
+  git clone --recursive https://github.com/daeunSong/iiwa_examples.git
   ```
 
-2. Clone [ridgeback](https://github.com/daeunSong/ridgeback), [ridgeback_simulator](https://github.com/daeunSong/ridgeback_simulator), [ridgeback_iiwa_integration](https://github.com/daeunSong/ridgeback_iiwa_integration) repositories to your workspace:
+2. Clone [ridgeback](https://github.com/daeunSong/ridgeback/tree/glab/integration), [ridgeback_simulator](https://github.com/daeunSong/ridgeback_simulator/tree/glab/integration), [ridgeback_iiwa_integration](https://github.com/daeunSong/ridgeback_iiwa_integration/tree/devel) repositories to your workspace:
   ```sh
-  git clone https://github.com/daeunSong/ridgeback.git
-  git clone https://github.com/daeunSong/ridgeback_simulator.git
-  git clone https://github.com/daeunSong/ridgeback_iiwa_integration.git
+  git clone https://github.com/daeunSong/ridgeback/tree/glab/integration.git
+  git clone https://github.com/daeunSong/ridgeback_simulator/tree/glab/integration.git
+  git clone https://github.com/daeunSong/ridgeback_iiwa_integration/tree/devel.git
   ```
 
 3. Install the dependencies:
@@ -50,12 +50,10 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
 ## Demo
 Run the following commands in respective terminals:
 ```sh
-roscore 
 roslaunch ridgeback_gazebo ridgeback_world.launch
 roslaunch ridgeback_navigation odom_navigation_demo.launch
 roslaunch ridgeback_viz view_robot.launch config:=navigation
 ```
 ```sh
-roscore 
 roslaunch ridgeback_iiwa_moveit_config demo.launch
 ```
