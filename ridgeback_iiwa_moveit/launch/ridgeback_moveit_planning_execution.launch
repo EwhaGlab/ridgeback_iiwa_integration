@@ -28,7 +28,7 @@
         </include>
     </group>
 
-    <include file="$(find ridgeback_iiwa_moveit_config)/launch/move_group.launch">
+    <include file="$(find ridgeback_iiwa_moveit)/launch/move_group.launch">
         <arg name="publish_monitored_planning_scene" value="true" />
         <arg name="hardware_interface" value="$(arg hardware_interface)"/>
         <arg name="robot_name" value="$(arg robot_name)"/>

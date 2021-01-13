@@ -6,9 +6,9 @@ then
   cd "$1"
 
   echo "Copying IIWA Moveit Config"
-  cp -r $(catkin_find ridgeback_iiwa_moveit_config)/. .
+  cp -r $(catkin_find ridgeback_iiwa_moveit)/. .
   echo "Updating Package"
-  grep -rli 'ridgeback_iiwa_moveit_config' * | xargs -i@ sed -i 's/ridgeback_iiwa_moveit_config/'$1'/g' @
+  grep -rli 'ridgeback_iiwa_moveit' * | xargs -i@ sed -i 's/ridgeback_iiwa_moveit/'$1'/g' @
   echo "Done"
 
 else

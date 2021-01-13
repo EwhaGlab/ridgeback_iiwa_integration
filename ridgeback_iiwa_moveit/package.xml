@@ -1,5 +1,5 @@
 <package format="2">
-  <name>ridgeback_iiwa_moveit_config</name>
+  <name>ridgeback_iiwa_moveit</name>
   <version>0.0.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the Ridgeback with the MoveIt! Motion Planning Framework
