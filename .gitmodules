@@ -8,7 +8,7 @@
 [submodule "ridgeback/ridgeback_simulator"]
 	path = ridgeback/ridgeback_simulator
 	url = https://github.com/daeunSong/ridgeback_simulator.git
-	branch = melodic-devel
+	branch = glab/integration
 [submodule "ridgeback/ridgeback"]
 	path = ridgeback/ridgeback
 	url = https://github.com/daeunSong/ridgeback.git
