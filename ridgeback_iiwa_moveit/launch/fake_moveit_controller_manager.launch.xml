@@ -5,6 +5,6 @@
   <arg name="hardware_interface" default="dummy"/>
 
   <!-- The rest of the params are specific to this plugin -->
-  <rosparam file="$(find ridgeback_iiwa_moveit_config)/config/fake_controllers.yaml"/>
+  <rosparam file="$(find ridgeback_iiwa_moveit)/config/fake_controllers.yaml"/>
 
 </launch>
