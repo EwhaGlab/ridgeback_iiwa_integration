@@ -12,7 +12,7 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
 1. Clone this repository with the recursive option:
   ```sh
   mkdir ros_ws && cd ros_ws && mkdir src
-  catkin_init_work_space
+  catkin_init_workspace
   cd src
   git clone --recursive https://github.com/daeunSong/ridgeback_iiwa_integration.git
   ```
