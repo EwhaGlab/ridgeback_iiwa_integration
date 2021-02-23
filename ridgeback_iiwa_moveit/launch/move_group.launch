@@ -5,6 +5,7 @@
   <arg name="robot_name" default="iiwa"/>
   <arg name="model" default="iiwa7"/>
 
+<!-- IIWA: true -->
   <include file="$(find ridgeback_iiwa_moveit)/launch/planning_context.launch">
     <arg name="load_robot_description" value="false"/>
   </include>
