@@ -16,3 +16,6 @@
 [submodule "ridgeback/ridgeback_examples"]
 	path = ridgeback/ridgeback_examples
 	url = https://github.com/daeunSong/ridgeback_examples.git
+[submodule "ridgeback/ridgeback_desktop"]
+	path = ridgeback/ridgeback_desktop
+	url = https://github.com/ridgeback/ridgeback_desktop.git
