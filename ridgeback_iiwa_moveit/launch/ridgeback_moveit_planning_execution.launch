@@ -11,22 +11,21 @@
            to="/$(arg robot_name)/$(arg hardware_interface)_trajectory_controller/follow_joint_trajectory" / -->
     <!-- remap from="robot_description" to="/$(arg robot_name)/robot_description" / -->
     <!-- remap from="/get_planning_scene" to="/$(arg robot_name)/get_planning_scene" / -->
+        <!-- Load Gazebo with given values -->
+    <include file="$(find ridgeback_iiwa_gazebo)/launch/ridgeback_iiwa_world.launch">
+        <arg name="hardware_interface" value="$(arg hardware_interface)"/>
+        <arg name="robot_name" value="$(arg robot_name)" />
+        <arg name="model" value="$(arg model)"/>
+    </include>
 
     <!-- Working with the real robot.  -->
-    <group ns="$(arg robot_name)">
-        <!-- Load controllers accordingly to parameters -->
-        <include file="$(find iiwa_control)/launch/iiwa_control.launch">
-            <arg name="hardware_interface" value="$(arg hardware_interface)" />
-            <arg name="controllers" value="joint_state_controller $(arg hardware_interface)_trajectory_controller" />
-            <arg name="robot_name" value="$(arg robot_name)" />
-            <arg name="model" value="$(arg model)" />
-        </include>
+    <!-- <group ns="$(arg robot_name)"> -->
 
-        <!-- Robot interface -->
-        <include file="$(find iiwa_hw)/launch/iiwa_hw.launch" >
-            <arg name="hardware_interface" value="$(arg hardware_interface)" />
-        </include>
-    </group>
+    <!-- Robot interface -->
+    <include file="$(find iiwa_hw)/launch/iiwa_hw.launch" >
+        <arg name="hardware_interface" value="$(arg hardware_interface)" />
+    </include>
+    <!-- </group> -->
 
     <include file="$(find ridgeback_iiwa_moveit)/launch/move_group.launch">
         <arg name="publish_monitored_planning_scene" value="true" />
@@ -34,6 +33,11 @@
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="model" value="$(arg model)" />
     </include>
+
+    <include file="$(find ridgeback_iiwa_moveit)/launch/moveit_rviz.launch">
+        <arg name="config" value="true"/>
+    </include>
+
 
     <node pkg="topic_tools" type="relay" name="iiwa_joint_relay" args="/iiwa/joint_states /joint_states" />
 </launch>
