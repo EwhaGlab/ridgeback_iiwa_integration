@@ -9,6 +9,9 @@
   <!-- By default, we are not in debug mode -->
   <arg name="debug" default="false" />
 
+  <arg name="rviz_config" default="moveit.rviz" />
+  <arg name="config" default="false"/>
+
   <!--
   By default, hide joint_state_publisher's GUI
 
@@ -48,6 +51,7 @@
   <include file="$(find ridgeback_iiwa_moveit)/launch/moveit_rviz.launch">
     <arg name="config" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
+    <arg name="config_name" value="$(arg rviz_config)"/>
   </include>
 
 </launch>

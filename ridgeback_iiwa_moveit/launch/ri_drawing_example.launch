@@ -1,0 +1,30 @@
+<launch>
+
+  <arg name="robot_name" default="iiwa"/>
+  <arg name="world_name" default="$(find iiwa_gazebo)/worlds/iiwa_drawing.world" />
+  <arg name="rviz_config" default="moveit_drawing.rviz" />
+  <!-- iiwa_drawing -->
+  <arg name="move_group" default="manipulator"/>
+  <arg name="ee_link" default="iiwa_link_ee"/>
+  <arg name="ros_rate" default="10.0"/>
+  <arg name="planner_id" default="RRTConnectkConfigDefault"/>
+  <arg name="reference_frame" default="arm_mount_link"/>
+
+  <include file="$(find ridgeback_gazebo)/launch/ridgeback_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+    
+  <include file="$(find ridgeback_iiwa_moveit)/launch/demo.launch">
+    <arg name="config" value="true"/>
+    <arg name="rviz_config" value="$(arg rviz_config)"/>
+  </include>
+
+  <include file="$(find iiwa_examples)/launch/ri_drawing.launch">
+    <arg name="move_group" value="$(arg move_group)"/>
+    <arg name="ee_link" value="$(arg ee_link)"/>
+    <arg name="ros_rate" value="$(arg ros_rate)"/>
+    <arg name="planner_id" value="$(arg planner_id)"/>
+    <arg name="reference_frame" value="$(arg reference_frame)"/>
+  </include>
+
+</launch>
