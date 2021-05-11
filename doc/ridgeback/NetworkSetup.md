@@ -26,7 +26,7 @@ Ridgeback is currently setup to automatically connect to **COM_GR_5G** wifi with
 
 	|  Address        | Netmask         | Gateway      |
 	|  :------------: | :-------------: | :----------: |
-	|  172.31.1.*150*  |  255.255.255.0  |  172.31.1.1  |
+	|  172.31.1.*150*  |  255.255.255.0  |  172.31.1.101  |
 
     ⚠️ Make sure the address is not overlapped with your coworkers. 
 

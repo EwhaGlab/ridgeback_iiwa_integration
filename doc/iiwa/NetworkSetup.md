@@ -15,7 +15,7 @@ We are setting up your **PC** as a **ROS_MASTER**.
 
 	|  Address           | Netmask         | Gateway         |
 	|  :---------------: | :-------------: | :-------------: |
-	|  172.31.1.2        |  255.255.255.0  |  192.168.168.0  |
+	|  172.31.1.2        |  255.255.255.0  |  172.31.1.101   |
    
 3. Add following lines to **~/.bashrc**:  
   ```sh
@@ -36,7 +36,7 @@ We are setting up **Ridgeback** as a **ROS_MASTER**.
 
 	|  Address           | Netmask         | Gateway         |
 	|  :---------------: | :-------------: | :-------------: |
-	|  172.31.1.*150*    |  255.255.255.0  |  192.168.168.0  |
+	|  172.31.1.*150*    |  255.255.255.0  |  172.31.1.101   |
 
    ⚠️ Make sure the address is not overlapped with your coworkers. Change 150 to anything else but 147 (KUKA cabinet).
    
