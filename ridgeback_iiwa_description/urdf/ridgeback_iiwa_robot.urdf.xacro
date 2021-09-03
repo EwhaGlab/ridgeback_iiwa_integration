@@ -3,6 +3,7 @@
   <xacro:include filename="$(find iiwa_description)/urdf/materials.xacro" />
   <!-- Include iiwa URDF -->
   <xacro:include filename="$(find ridgeback_iiwa_description)/urdf/iiwa7.xacro"/>
+  <!-- Include acc URDF -->
   <xacro:include filename="$(find ridgeback_iiwa_description)/urdf/hams.urdf.xacro"/>
 
   <xacro:arg name="hardware_interface" default="PositionJointInterface"/>
