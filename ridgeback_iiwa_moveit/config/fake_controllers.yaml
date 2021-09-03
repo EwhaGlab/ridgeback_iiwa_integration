@@ -1,5 +1,6 @@
 controller_list:
-  - name: fake_manipulator_controller
+  - name: fake_arm_controller
+    type: $(arg execution_type)
     joints:
       - iiwa_joint_1
       - iiwa_joint_2
@@ -8,3 +9,6 @@ controller_list:
       - iiwa_joint_5
       - iiwa_joint_6
       - iiwa_joint_7
+initial:  # Define initial robot poses.
+  - group: arm
+    pose: drawing

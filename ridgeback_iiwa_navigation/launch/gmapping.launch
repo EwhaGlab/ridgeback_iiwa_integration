@@ -1,0 +1,24 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="open_rviz" default="true"/>
+  <arg name="scan_topic" default="front/scan" />
+
+  <!-- Ridgeback -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+
+  <!--- Run gmapping -->
+  <include file="$(find ridgeback_navigation)/launch/include/gmapping.launch">
+    <arg name="scan_topic" value="$(arg scan_topic)" />
+  </include>
+
+  <!--- Move Base -->
+  <include file="$(find ridgeback_navigation)/launch/include/move_base.launch" />
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find ridgeback_iiwa_navigation)/rviz/gmapping.rviz" output="screen"/>
+  </group>
+</launch>

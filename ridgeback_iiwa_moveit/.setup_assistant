@@ -2,9 +2,10 @@ moveit_setup_assistant_config:
   URDF:
     package: ridgeback_description
     relative_path: urdf/ridgeback.urdf.xacro
+    xacro_args: ""
   SRDF:
     relative_path: config/ridgeback.srdf
   CONFIG:
-    author_name: Dave Niewinski
-    author_email: dniewinski@clearpathrobotics.com
-    generated_timestamp: 1518810924
+    author_name: Daeun Song
+    author_email: daeun7250@gmail.com
+    generated_timestamp: 1630644100
