@@ -1,23 +1,15 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>ridgeback_iiwa_gazebo</name>
-  <version>0.1.1</version>
-  <description>Launchfiles to use Ridgeback + iiwa in Gazebo.</description>
+  <version>0.0.0</version>
+  <description>The ridgeback_iiwa_gazebo package</description>
 
   <maintainer email="daeun7250@gmail.com">Daeun Song</maintainer>
-  <author>Daeun Song</author>
 
   <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>roslaunch</build_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>gazebo_plugins</run_depend>
-  <run_depend>hector_gazebo_plugins</run_depend>
-  <run_depend>ridgeback_gazebo_plugins</run_depend>
-  <run_depend>ridgeback_control</run_depend>
-  <run_depend version_gte="0.1.6" >ridgeback_description</run_depend>
-  <run_depend>iiwa_description</run_depend>
 
+  <exec_depend>iiwa_description</exec_depend>
+  <exec_depend>ridgeback_description</exec_depend>
 </package>
