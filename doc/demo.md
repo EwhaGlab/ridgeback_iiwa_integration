@@ -10,7 +10,7 @@ roslaunch ridgeback_iiwa_gazebo ridgeback_iiwa_gazebo.launch [world_name:=/path/
 ## Navigation
 
 ### Navigation without a map
-<img src="./doc/img/navigation1.png" width="600">
+<img src="./img/navigation1.png" width="600">
 
 ```sh
 roslaunch ridgeback_iiwa_navigation odom_navigation.launch
@@ -19,7 +19,7 @@ In this demonstration, it takes in information from **odometry**, laser scanner,
 
 
 ### Making a map
-<img src="./doc/img/navigation2.png" width="600">
+<img src="./img/navigation2.png" width="600">
 
 ```
 roslaunch ridgeback_iiwa_navigation gmapping.launch
@@ -34,7 +34,7 @@ This will creat a `mymap.yaml` and `mymap.pgm` files in the directory where you 
 
 
 ### Navigation with a map
-<img src="./doc/img/navigation3.png" width="600">
+<img src="./img/navigation3.png" width="600">
 
 ```sh
 roslaunch ridgeback_iiwa_navigation amcl_navigation.launch [map_file:=/path/to/my/map.yaml]
@@ -48,7 +48,7 @@ With 2D Pose Estimate and 2D Nav Goal button, navigate through the goal position
 ## Manipulation
 
 ### Manipulation using an interactive marker 
-<img src="./doc/img/manipulation1.png" width="600">
+<img src="./img/manipulation1.png" width="600">
 
 ```shell
 roslaunch ridgeback_iiwa_manipulation interactive_manipulation.launch
@@ -57,7 +57,7 @@ roslaunch ridgeback_iiwa_manipulation interactive_manipulation.launch
 In this demonstration, we launch **move_group** for planning the manipulator. Through rviz, you can manipulate the manipulator.
 
 ### Simple manipulation by code
-<img src="./doc/img/manipulation2.gif" width="600">
+<img src="./img/manipulation2.gif" width="600">
 
 ```shell
 roslaunch ridgeback_iiwa_manipulation simple_manipulation.launch
@@ -67,7 +67,7 @@ In this demonstration, we launch **move_group** for planning the manipulator. An
 
 
 ## Navigating with manipulation
-<img src="./doc/img/manipulation_w_navigation.gif" width="600">
+<img src="./img/manipulation_w_navigation.gif" width="600">
 
 This is a simple example that shows navigating with manipulation. The whole point is to launch just one node for **move_group**, **move_base**, **robot_state_publisher**, and **rviz** each. 
 
