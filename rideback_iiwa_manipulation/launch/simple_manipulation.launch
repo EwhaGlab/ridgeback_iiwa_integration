@@ -1,0 +1,30 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="open_rviz" default="true"/>
+  <!-- Parameters to pass to the ROS node -->
+  <arg name="move_group" default="arm"/>
+  <arg name="ee_link" default="iiwa_link_ee"/>
+  <arg name="ros_rate" default="50"/>
+
+  <!-- Ridgeback -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+
+  <!-- Run the main MoveIt! executable without trajectory execution (we do not have controllers configured by default) -->
+  <include file="$(find ridgeback_iiwa_moveit)/launch/move_group.launch" />
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find ridgeback_iiwa_manipulation)/rviz/robot.rviz" output="screen"/>
+  </group>
+
+  <!-- Here we call the ROS node we have written, with the parameters on top   -->
+  <node name="SimpleManipulation" pkg="ridgeback_iiwa_manipulation" type="simple_manipulation" respawn="false" output="screen">
+    <param name="move_group" value="$(arg move_group)"/>
+    <param name="ee_link" value="$(arg ee_link)"/>
+    <param name="ros_rate" value="$(arg ros_rate)"/>
+  </node>
+
+</launch>
