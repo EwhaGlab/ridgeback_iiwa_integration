@@ -2,6 +2,8 @@
   <arg name="gui" default="true"/>
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
+  <arg name="joystick" default="true" />
+  <arg name="world_name" default="$(find ridgeback_iiwa_gazebo)/worlds/ridgeback_race.world" />
 
   <rosparam file="$(find ridgeback_iiwa_gazebo)/config/gazebo_controller.yaml" command="load"/>
 
@@ -10,11 +12,11 @@
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="world_name" value="$(arg world_name)" />
   </include>
 
   <!-- send robot urdf to param server -->
   <include file="$(find ridgeback_iiwa_description)/launch/ridgeback_iiwa_upload.launch" />
-
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
@@ -24,6 +26,8 @@
   <include file="$(find ridgeback_iiwa_gazebo)/launch/controller_utils.launch"/>
 
   <!-- run controllers -->
-  <include file="$(find ridgeback_iiwa_gazebo)/launch/ridgeback_iiwa_controller.launch"/>
+  <include file="$(find ridgeback_iiwa_gazebo)/launch/ridgeback_iiwa_controller.launch">
+    <arg name="joystick" value="$(arg joystick)" />
+  </include>
 
 </launch>
