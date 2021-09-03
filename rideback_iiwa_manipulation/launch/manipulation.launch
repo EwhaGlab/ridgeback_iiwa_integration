@@ -1,6 +1,7 @@
 <launch>
   <!-- Arguments -->
   <arg name="open_rviz" default="true"/>
+  <arg name="config" default="interactive"/>
 
   <!-- Ridgeback -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
@@ -13,7 +14,7 @@
   <!-- rviz -->
   <group if="$(arg open_rviz)">
     <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find ridgeback_iiwa_manipulation)/rviz/interactive.rviz" output="screen"/>
+          args="-d $(find ridgeback_iiwa_manipulation)/rviz/$(arg config).rviz" output="screen"/>
   </group>
 
 </launch>
