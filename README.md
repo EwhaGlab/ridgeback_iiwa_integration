@@ -4,54 +4,75 @@
 
 <img src="./doc/img/demo.png" width="600">
 
-This repository provides our customed ridgeback integration with KUKA LBR iiwa 7 R800 based on [ridgeback_manipulation](https://github.com/ridgeback/ridgeback_manipulation). 
+This repository provides our customed ridgeback integration with KUKA LBR iiwa 7 R800 based on [ridgeback_manipulation](https://github.com/ridgeback/ridgeback_manipulation) and [turtlebot3_manipulation](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation). 
 
 
 ## Build and Compile
 
-1. Clone this repository with the recursive option:
+1. Clone this repository:
   ```sh
   mkdir ros_ws && cd ros_ws && mkdir src
   catkin_init_workspace
   cd src
-  git clone --recursive https://github.com/daeunSong/ridgeback_iiwa_integration.git
+  git clone https://github.com/daeunSong/ridgeback_iiwa_integration.git
   ```
 
-2. Install the dependencies:
+2. Clone **iiwa** relative repositories:
+  ```shell
+  git clone -b glab/drawing https://github.com/daeunSong/iiwa_stack.git
+  ```
+
+3. Clone **ridgeback** relative repositories:
+  ```shell
+  git clone https://github.com/ridgeback/ridgeback.git
+  git clone https://github.com/ridgeback/ridgeback_desktop.git
+  git clone https://github.com/ridgeback/ridgeback_simulator.git
+  ```
+
+4. [Optional] Clone the example repositories:
+  ```shell
+  git clone https://github.com/daeunsong/iiwa_examples.git
+  git clone https://github.com/daeunsong/ridgeback_examples.git
+  ```
+
+5. Install the dependencies:
   ```sh
   cd ..
   rosdep install --from-paths src --ignore-src -r -y
   ```
 
-3. Add a following line in ~/.bashrc:
+6. Add a following line in ~/.bashrc:
 
-  `export RIDGEBACK_URDF_EXTRAS=$(catkin_find ridgeback_iiwa_description urdf/ridgeback_iiwa_7_description.urdf.xacro --first-only)`
+`export RIDGEBACK_URDF_EXTRAS=$(catkin_find ridgeback_iiwa_description urdf/ridgeback_iiwa_robot.urdf.xacro --first-only)`
 
-4. Build the workspace:
+7. Build the workspace:
   ```sh
   catkin build
   ```
 
-5. Source the workspace:
+8. Source the workspace:
   ```sh
   source devel/setup.bash
   ```
-   You can also add this line in ~/.bashrc, but be aware that this has to be above the line in step 4.
+   You can also add this line in ~/.bashrc, but be aware that this has to be above the line in step 6.
 
 
 ## Demo
-Run the following commands in respective terminals.
+For a quick demo, run the following commands in respective terminals. Please refer to the [documentation](./doc/demo.md) for more details.
 
-ridgeback example:
-```sh
-roslaunch ridgeback_gazebo ridgeback_world.launch
-roslaunch ridgeback_navigation odom_navigation_demo.launch
-roslaunch ridgeback_viz view_robot.launch config:=navigation
+1. Run gazebo and bring up the robot model
+```shell
+roslaunch ridgeback_iiwa_gazebo ridgeback_iiwa_gazebo.launch 
 ```
-iiwa examples:
-```sh
-roslaunch iiwa_examples iiwa_updown_moveit.launch
+
+2. Run move_base and move_group with rviz
+```shell
+roslaunch ridgeback_iiwa_navigation odom_navigation.launch open_rviz:=false
+roslaunch ridgeback_iiwa_manipulation manipulation_w_navigation.launch
 ```
-```sh
-roslaunch iiwa_examples iiwa_drawing_moveit.launch
+
+3. Run simple example to show each robot movements
+```
+rosrun ridgeback_examples teleop_key.py
+rosrun ridgeback_iiwa_manipulation simple_manipulation
 ```
