@@ -11,7 +11,7 @@ arm_controller:
 
   constraints:
     goal_time: 0.5                   # Override default
-    stopped_velocity_tolerance: 0.05
+    stopped_velocity_tolerance: 0.0
     iiwa_joint_1: {trajectory: 0.1, goal: 0.1}
     iiwa_joint_2: {trajectory: 0.1, goal: 0.1}
     iiwa_joint_3: {trajectory: 0.1, goal: 0.1}
