@@ -1,0 +1,33 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="open_rviz" default="true"/>
+
+  <!-- Ridgeback -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+
+  <!--- Move Base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+
+    <rosparam file="$(find ridgeback_navigation)/params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find ridgeback_navigation)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+
+    <rosparam file="$(find ridgeback_navigation)/params/odom_nav_params/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find ridgeback_navigation)/params/odom_nav_params/local_costmap_params.yaml" command="load" />
+
+    <rosparam file="$(find ridgeback_navigation)/params/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find ridgeback_navigation)/params/move_base_params.yaml" command="load" />
+
+    <param name="base_global_planner" type="string" value="navfn/NavfnROS" />
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+
+    <remap from="odom" to="odometry/filtered" />
+  </node>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find ridgeback_iiwa_navigation)/rviz/navigation.rviz" output="screen"/>
+  </group>
+</launch>
