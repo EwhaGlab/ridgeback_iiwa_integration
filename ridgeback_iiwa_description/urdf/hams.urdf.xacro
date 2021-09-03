@@ -1,46 +1,24 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <!--link name="table_top_link">
+
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find ridgeback_iiwa_description)/urdf/hams.gazebo.xacro" />
+
+  <link name="upper_cover_link">
     <visual>
+      <origin xyz="-0.48 -0.4 -1.02" rpy="${PI/2} 0 ${PI/2}" />
       <geometry>
-        <mesh filename="package://ridgeback_manipulation_description/meshes/hams-table-top.stl" />
+        <mesh filename="package://ridgeback_iiwa_description/meshes/upper_cover.stl" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="black" />
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.48 -0.4 -1.02" rpy="${PI/2} 0 ${PI/2}" />
       <geometry>
-        <mesh filename="package://ridgeback_manipulation_description/meshes/hams-table-top.stl" />
+        <mesh filename="package://ridgeback_iiwa_description/meshes/upper_cover.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-
-  <link name="table_legs_link">
-    <visual>
-      <geometry>
-        <mesh filename="package://ridgeback_manipulation_description/meshes/hams-table-legs.stl" />
-      </geometry>
-      <material name="light_grey" />
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://ridgeback_manipulation_description/meshes/hams-table-legs.stl" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="table_top_joint" type="fixed">
-    <parent link="mid_mount" />
-    <child link="table_top_link" />
-    <origin xyz="0 0 0.60635" rpy="0 0 0"/>
-  </joint>
-
-  <joint name="table_legs_joint" type="fixed">
-    <parent link="mid_mount" />
-    <child link="table_legs_link" />
-    <origin xyz="0 0 0.60635" rpy="0 0 0"/>
-  </joint-->
 
   <link name="arm_mount_link">
     <visual>
@@ -56,6 +34,13 @@
       </geometry>
     </collision>
   </link>
+
+
+  <joint name="upper_cover_link_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="upper_cover_link" />
+  </joint>
 
   <joint name="arm_mount_joint" type="fixed">
     <parent link="mid_mount" />
