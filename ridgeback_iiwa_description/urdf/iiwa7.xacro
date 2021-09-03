@@ -2,11 +2,11 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <xacro:include filename="$(find ridgeback_iiwa_description)/urdf/iiwa.gazebo.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/iiwa.gazebo.xacro" />
   <!-- Import Transmissions -->
-  <xacro:include filename="$(find ridgeback_iiwa_description)/urdf/iiwa.transmission.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/iiwa.transmission.xacro" />
   <!-- Include Utilities -->
-  <xacro:include filename="$(find ridgeback_iiwa_description)/urdf/utilities.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/utilities.xacro" />
 
   <!-- some constants -->
   <xacro:property name="safety_controller_k_pos" value="100" />
@@ -34,9 +34,8 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_0.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_0.dae"/>
         </geometry>
-        <material name="Grey"/>
       </visual>
 
       <collision>
@@ -44,7 +43,6 @@
         <geometry>
           <mesh filename="package://iiwa_description/meshes/iiwa7/collision/link_0.stl"/>
         </geometry>
-        <material name="Grey"/>
       </collision>
 
       <self_collision_checking>
@@ -80,16 +78,14 @@
       <visual>
         <origin xyz="0 0 0.0075" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_1.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_1.dae"/>
         </geometry>
-        <material name="Orange"/>
       </visual>
       <collision>
         <origin xyz="0 0 0.0075" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://iiwa_description/meshes/iiwa7/collision/link_1.stl"/>
         </geometry>
-        <material name="Orange"/>
       </collision>
     </link>
 
@@ -116,9 +112,8 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_2.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_2.dae"/>
         </geometry>
-        <material name="Orange"/>
       </visual>
 
       <collision>
@@ -126,7 +121,6 @@
         <geometry>
           <mesh filename="package://iiwa_description/meshes/iiwa7/collision/link_2.stl"/>
         </geometry>
-        <material name="Orange"/>
       </collision>
     </link>
 
@@ -154,9 +148,8 @@
       <visual>
         <origin xyz="0 0 -0.026" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_3.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_3.dae"/>
         </geometry>
-        <material name="Orange"/>
       </visual>
 
       <collision>
@@ -164,7 +157,6 @@
         <geometry>
           <mesh filename="package://iiwa_description/meshes/iiwa7/collision/link_3.stl"/>
         </geometry>
-        <material name="Orange"/>
       </collision>
 
     </link>
@@ -193,9 +185,8 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_4.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_4.dae"/>
         </geometry>
-        <material name="Orange"/>
       </visual>
 
       <collision>
@@ -203,7 +194,6 @@
         <geometry>
           <mesh filename="package://iiwa_description/meshes/iiwa7/collision/link_4.stl"/>
         </geometry>
-        <material name="Orange"/>
       </collision>
     </link>
 
@@ -231,9 +221,8 @@
       <visual>
         <origin xyz="0 0 -0.026" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_5.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_5.dae"/>
         </geometry>
-        <material name="Orange"/>
       </visual>
 
       <collision>
@@ -241,7 +230,6 @@
         <geometry>
           <mesh filename="package://iiwa_description/meshes/iiwa7/collision/link_5.stl"/>
         </geometry>
-        <material name="Orange"/>
       </collision>
     </link>
 
@@ -269,9 +257,8 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_6.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_6.dae"/>
         </geometry>
-        <material name="Orange"/>
       </visual>
 
       <collision>
@@ -279,7 +266,6 @@
         <geometry>
           <mesh filename="package://iiwa_description/meshes/iiwa7/collision/link_6.stl"/>
         </geometry>
-        <material name="Orange"/>
       </collision>
     </link>
 
