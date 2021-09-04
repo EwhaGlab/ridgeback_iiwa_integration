@@ -105,8 +105,14 @@ rosrun ridgeback_iiwa_manipulation simple_manipulation
 This is a simple example that shows navigating with manipulation. The whole point is to launch just one node for **move_group**, **move_base**, **robot_state_publisher**, and **rviz** each. 
 
 ```sh
-roslaunch ridgeback_iiwa_navigation odom_navigation.launch open_rviz:=false
-roslaunch ridgeback_iiwa_manipulation manipulation.launch config:=mobile_manipulation
+roslaunch ridgeback_iiwa_manipulation mobile_manipulation.launch
+```
+
+This is same as below:
+```sh
+roslaunch ridgeback_navigation odom_navigation_demo.launch
+roslaunch ridgeback_iiwa_moveit move_group.launch
+roslaunch ridgeback_iiwa_viz view_robot.launch config:=mobile_manipulation
 ```
 
 Then, run the nodes for executing ridgeback and iiwa.

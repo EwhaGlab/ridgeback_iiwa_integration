@@ -1,0 +1,40 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="open_rviz" default="true"/>
+  <arg name="config" default="mobile_manipulation"/>
+  <arg name="scan_topic" default="front/scan" />
+
+  <!-- Run MoveIt! -->
+  <include file="$(find ridgeback_iiwa_moveit)/launch/move_group.launch" />
+
+  <!--- IF odom navigation -->
+  <group if="$(eval arg('config') == 'mobile_manipulation')">
+    <include file="$(find ridgeback_navigation)/launch/odom_navigation_demo.launch" />
+  </group>
+
+  <!--- IF gmapping -->
+  <group if="$(eval arg('config') == 'gmapping')">
+    <include file="$(find ridgeback_navigation)/launch/gmapping_demo.launch">
+      <arg name="scan_topic" value="$(arg scan_topic)" />
+    </include>
+  </group>
+
+  <!--- IF amcl navigation -->
+  <arg name="map_file" default="$(find ridgeback_iiwa_navigation)/maps/ridgeback_race.yaml"/>
+  <group if="$(eval arg('config') == 'localization')">
+    <!--- Move Base, AMCL, Map Server -->
+    <include file="$(find ridgeback_navigation)/launch/amcl_demo.launch" >
+      <arg name="scan_topic" value="$(arg scan_topic)" />
+      <arg name="map_file" value="$(arg map_file)" />
+    </include>
+  </group>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)">
+    <include file="$(find ridgeback_iiwa_viz)/launch/view_robot.launch" >
+      <arg name="config" value="$(arg config)" />
+    </include>
+  </group>
+
+</launch>
+

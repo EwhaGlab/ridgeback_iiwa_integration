@@ -17,12 +17,12 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
   git clone https://github.com/daeunSong/ridgeback_iiwa_integration.git
   ```
 
-2. Clone **iiwa** relative repositories:
+2. Clone **iiwa** related repository:
   ```sh
   git clone -b glab/drawing https://github.com/daeunSong/iiwa_stack.git
   ```
 
-3. Clone **ridgeback** relative repositories:
+3. Clone **ridgeback** related repositories:
   ```sh
   git clone https://github.com/ridgeback/ridgeback.git
   git clone https://github.com/ridgeback/ridgeback_desktop.git
@@ -67,8 +67,7 @@ roslaunch ridgeback_iiwa_gazebo ridgeback_iiwa_gazebo.launch
 
 2. Run move_base and move_group with rviz
 ```sh
-roslaunch ridgeback_iiwa_navigation odom_navigation.launch open_rviz:=false
-roslaunch ridgeback_iiwa_manipulation manipulation.launch config:=mobile_manipulation
+roslaunch ridgeback_iiwa_manipulation mobile_manipulation.launch
 ```
 
 3. Run simple example to show each robot movements
