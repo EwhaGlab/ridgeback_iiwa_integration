@@ -1,0 +1,19 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="open_rviz" default="true"/>
+
+  <!-- Run MoveIt! -->
+  <include file="$(find ridgeback_iiwa_moveit)/launch/move_group.launch" />
+
+  <!--- move base -->
+  <include file="$(find ridgeback_navigation)/launch/odom_navigation_demo.launch" />
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)">
+    <include file="$(find ridgeback_iiwa_viz)/launch/view_robot.launch" >
+      <arg name="config" value="interactive" />
+    </include>
+  </group>
+
+</launch>
+

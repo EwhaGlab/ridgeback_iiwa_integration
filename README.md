@@ -58,6 +58,8 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
 
 
 ## Demo
+<img src="./doc/img/mobile_manipulation_interactive.gif" width="600">
+
 For a quick demo, run the following commands in respective terminals. Please refer to the [documentation](./doc/demo.md) for more details.
 
 1. Run gazebo and bring up the robot model
@@ -65,13 +67,8 @@ For a quick demo, run the following commands in respective terminals. Please ref
 roslaunch ridgeback_iiwa_gazebo ridgeback_iiwa_gazebo.launch 
 ```
 
-2. Run move_base and move_group with rviz
+2. Run mobile manipulation demo
 ```sh
-roslaunch ridgeback_iiwa_manipulation mobile_manipulation.launch
+roslaunch ridgeback_iiwa_manipulation mobile_manipulation_interactive_demo.launch
 ```
 
-3. Run simple example to show each robot movements
-```sh
-rosrun ridgeback_examples teleop_key.py
-rosrun ridgeback_iiwa_manipulation simple_manipulation
-```

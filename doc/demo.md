@@ -99,10 +99,23 @@ roslaunch ridgeback_iiwa_viz view_robot.launch config:=mobile_manipulation
 rosrun ridgeback_iiwa_manipulation simple_manipulation
 ```
 
-## Navigating with manipulation
-<img src="./img/manipulation_w_navigation.gif" width="600">
+## Mobile manipulation
 
-This is a simple example that shows navigating with manipulation. The whole point is to launch just one node for **move_group**, **move_base**, **robot_state_publisher**, and **rviz** each. 
+### Interactive demo
+
+This is a simple example to navigate and manipulate robots with interactive markers.
+
+<img src="./img/mobile_manipulation_interactive.gif" width="600">
+
+```sh
+roslaunch ridgeback_iiwa_manipulation mobile_manipulation_interactive_demo.launch
+```
+
+### Simple mobile manipulation by code
+
+This is a simple example that shows the mobile manipulation by code. The whole point is to launch **move_group**, **move_base**, and **rviz** with correct robot state publisher and controllers.
+
+<img src="./img/mobile_manipulation.gif" width="600">
 
 ```sh
 roslaunch ridgeback_iiwa_manipulation mobile_manipulation.launch
@@ -115,7 +128,7 @@ roslaunch ridgeback_iiwa_moveit move_group.launch
 roslaunch ridgeback_iiwa_viz view_robot.launch config:=mobile_manipulation
 ```
 
-Then, run the nodes for executing ridgeback and iiwa.
+Then, run the nodes for programming ridgeback and iiwa.
 
 ```sh
 rosrun ridgeback_examples teleop_key.py
