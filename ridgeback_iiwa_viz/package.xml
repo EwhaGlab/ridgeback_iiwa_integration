@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>ridgeback_iiwa_viz</name>
+  <version>0.1.0</version>
+  <description>Visualization launchers and helpers for Ridgeback with iiwa.</description>
+
+  <author email="daeun7250@gmail.com">Daeun Song</author>
+  <maintainer email="daeun7250@gmail.com">Daeun Song</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roslaunch</build_depend>
+  <run_depend>ridgeback_description</run_depend>
+  <run_depend>iiwa_description</run_depend>
+  <run_depend>ridgeback_iiwa_description</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>joint_state_publisher_gui</run_depend>
+  <run_depend>rviz</run_depend>
+
+  <export>
+  </export>
+</package>

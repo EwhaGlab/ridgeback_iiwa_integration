@@ -3,7 +3,7 @@
 Run the following commands in respective terminals.
 
 If you are using simulation, bring up Ridgeback with iiwa in Gazebo:
-```shell
+```sh
 roslaunch ridgeback_iiwa_gazebo ridgeback_iiwa_gazebo.launch [world_name:=/path/to/my/world.world]
 ```
 
@@ -50,7 +50,7 @@ With 2D Pose Estimate and 2D Nav Goal button, navigate through the goal position
 ### Manipulation using an interactive marker 
 <img src="./img/manipulation1.png" width="600">
 
-```shell
+```sh
 roslaunch ridgeback_iiwa_manipulation manipulation.launch
 ```
 
@@ -59,7 +59,7 @@ In this demonstration, we launch **move_group** for planning the manipulator. Th
 ### Simple manipulation by code
 <img src="./img/manipulation2.gif" width="600">
 
-```shell
+```sh
 roslaunch ridgeback_iiwa_manipulation simple_manipulation.launch
 ```
 
@@ -71,14 +71,14 @@ In this demonstration, we launch **move_group** for planning the manipulator. An
 
 This is a simple example that shows navigating with manipulation. The whole point is to launch just one node for **move_group**, **move_base**, **robot_state_publisher**, and **rviz** each. 
 
-```shell
+```sh
 roslaunch ridgeback_iiwa_navigation odom_navigation.launch open_rviz:=false
-roslaunch ridgeback_iiwa_manipulation manipulation.launch config:=navigation
+roslaunch ridgeback_iiwa_manipulation manipulation.launch config:=mobile_manipulation
 ```
 
 Then, run the nodes for executing ridgeback and iiwa.
 
-```
+```sh
 rosrun ridgeback_examples teleop_key.py
 rosrun ridgeback_iiwa_manipulation simple_manipulation
 ```

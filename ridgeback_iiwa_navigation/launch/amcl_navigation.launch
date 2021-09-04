@@ -2,6 +2,7 @@
   <!-- Arguments -->
   <arg name="map_file" default="$(find ridgeback_iiwa_navigation)/maps/ridgeback_race.yaml"/>
   <arg name="open_rviz" default="true"/>
+  <arg name="config" default="localization"/>
 
   <!-- Map server -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
@@ -23,7 +24,8 @@
 
   <!-- rviz -->
   <group if="$(arg open_rviz)">
-    <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find ridgeback_iiwa_navigation)/rviz/localization.rviz" output="screen"/>
+    <include file="$(find ridgeback_iiwa_viz)/launch/view_robot.launch" >
+      <arg name="config" value="$(arg config)" />
+    </include>
   </group>
 </launch>

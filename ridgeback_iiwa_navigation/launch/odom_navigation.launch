@@ -1,6 +1,7 @@
 <launch>
   <!-- Arguments -->
   <arg name="open_rviz" default="true"/>
+  <arg name="config" default="navigation"/>
 
   <!--- Move Base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
@@ -22,7 +23,8 @@
 
   <!-- rviz -->
   <group if="$(arg open_rviz)">
-    <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find ridgeback_iiwa_navigation)/rviz/navigation.rviz" output="screen"/>
+    <include file="$(find ridgeback_iiwa_viz)/launch/view_robot.launch" >
+      <arg name="config" value="$(arg config)" />
+    </include>
   </group>
 </launch>

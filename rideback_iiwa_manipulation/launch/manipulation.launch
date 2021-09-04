@@ -1,15 +1,16 @@
 <launch>
   <!-- Arguments -->
   <arg name="open_rviz" default="true"/>
-  <arg name="config" default="interactive"/>
+  <arg name="config" default="manipulation"/>
 
   <!-- Run the main MoveIt! executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(find ridgeback_iiwa_moveit)/launch/move_group.launch" />
 
   <!-- rviz -->
   <group if="$(arg open_rviz)">
-    <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find ridgeback_iiwa_manipulation)/rviz/$(arg config).rviz" output="screen"/>
+    <include file="$(find ridgeback_iiwa_viz)/launch/view_robot.launch" >
+      <arg name="config" value="$(arg config)" />
+    </include>
   </group>
 
 </launch>
