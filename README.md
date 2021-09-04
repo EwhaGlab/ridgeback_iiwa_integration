@@ -68,7 +68,7 @@ roslaunch ridgeback_iiwa_gazebo ridgeback_iiwa_gazebo.launch
 2. Run move_base and move_group with rviz
 ```shell
 roslaunch ridgeback_iiwa_navigation odom_navigation.launch open_rviz:=false
-roslaunch ridgeback_iiwa_manipulation manipulation_w_navigation.launch
+roslaunch ridgeback_iiwa_manipulation manipulation.launch config:=navigation
 ```
 
 3. Run simple example to show each robot movements

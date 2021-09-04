@@ -51,7 +51,7 @@ With 2D Pose Estimate and 2D Nav Goal button, navigate through the goal position
 <img src="./img/manipulation1.png" width="600">
 
 ```shell
-roslaunch ridgeback_iiwa_manipulation interactive_manipulation.launch
+roslaunch ridgeback_iiwa_manipulation manipulation.launch
 ```
 
 In this demonstration, we launch **move_group** for planning the manipulator. Through rviz, you can manipulate the manipulator.
@@ -73,7 +73,7 @@ This is a simple example that shows navigating with manipulation. The whole poin
 
 ```shell
 roslaunch ridgeback_iiwa_navigation odom_navigation.launch open_rviz:=false
-roslaunch ridgeback_iiwa_manipulation manipulation_w_navigation.launch
+roslaunch ridgeback_iiwa_manipulation manipulation.launch config:=navigation
 ```
 
 Then, run the nodes for executing ridgeback and iiwa.
