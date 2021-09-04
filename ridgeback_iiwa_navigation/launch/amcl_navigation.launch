@@ -1,26 +1,15 @@
 <launch>
   <!-- Arguments -->
   <arg name="map_file" default="$(find ridgeback_iiwa_navigation)/maps/ridgeback_race.yaml"/>
+  <arg name="scan_topic" default="front/scan" />
   <arg name="open_rviz" default="true"/>
   <arg name="config" default="localization"/>
 
-  <!-- Map server -->
-  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
-
-  <!--- AMCL -->
-  <arg name="scan_topic" default="front/scan" />
-  <arg name="initial_pose_x" default="0.0" />
-  <arg name="initial_pose_y" default="0.0" />
-  <arg name="initial_pose_a" default="0.0" />
-  <include file="$(find ridgeback_navigation)/launch/include/amcl.launch" >
-    <arg name="scan_topic"     value="$(arg scan_topic)" />
-    <arg name="initial_pose_x" value="$(arg initial_pose_x)" />
-    <arg name="initial_pose_y" value="$(arg initial_pose_y)" />
-    <arg name="initial_pose_a" value="$(arg initial_pose_a)" />
+  <!--- Move Base, AMCL, Map Server -->
+  <include file="$(find ridgeback_navigation)/launch/amcl_demo.launch" >
+    <arg name="scan_topic" value="$(arg scan_topic)" />
+    <arg name="map_file" value="$(arg map_file)" />
   </include>
-
-  <!--- Move Base -->
-  <include file="$(find ridgeback_navigation)/launch/include/move_base.launch" />
 
   <!-- rviz -->
   <group if="$(arg open_rviz)">
