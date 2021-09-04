@@ -3,11 +3,6 @@
   <arg name="open_rviz" default="true"/>
   <arg name="config" default="interactive"/>
 
-  <!-- Ridgeback -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
-  </node>
-
   <!-- Run the main MoveIt! executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(find ridgeback_iiwa_moveit)/launch/move_group.launch" />
 

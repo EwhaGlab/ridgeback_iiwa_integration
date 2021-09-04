@@ -3,11 +3,6 @@
   <arg name="map_file" default="$(find ridgeback_iiwa_navigation)/maps/ridgeback_race.yaml"/>
   <arg name="open_rviz" default="true"/>
 
-  <!-- Ridgeback -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
-  </node>
-
   <!-- Map server -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
 

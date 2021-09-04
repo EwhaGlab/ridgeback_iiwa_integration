@@ -2,11 +2,6 @@
   <!-- Arguments -->
   <arg name="open_rviz" default="true"/>
 
-  <!-- Ridgeback -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
-  </node>
-
   <!--- Move Base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
 
