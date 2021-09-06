@@ -5,7 +5,7 @@
   <arg name="joystick" default="true" />
   <arg name="world_name" default="$(find ridgeback_iiwa_gazebo)/worlds/ridgeback_race.world" />
 
-  <rosparam file="$(find ridgeback_iiwa_gazebo)/config/gazebo_controller.yaml" command="load"/>
+<!--   <rosparam file="$(find ridgeback_iiwa_gazebo)/config/gazebo_controller.yaml" command="load"/> -->
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
