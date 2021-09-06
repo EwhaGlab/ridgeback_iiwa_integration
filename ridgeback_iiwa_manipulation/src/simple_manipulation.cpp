@@ -12,7 +12,7 @@ using namespace std;
 using moveit::planning_interface::MoveItErrorCode;
 
 // Create MoveGroup
-static const std::string PLANNING_GROUP = "arm";
+static const std::string PLANNING_GROUP = "manipulator";
 static const std::string EE_LINK = "iiwa_link_ee";
 
 bool sim;

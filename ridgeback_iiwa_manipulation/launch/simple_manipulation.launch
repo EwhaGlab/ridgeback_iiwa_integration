@@ -3,7 +3,7 @@
   <arg name="open_rviz" default="true"/>
   <arg name="config" default="mobile_manipulation"/>
   <!-- Parameters to pass to the ROS node -->
-  <arg name="move_group" default="arm"/>
+  <arg name="move_group" default="manipulator"/>
   <arg name="ee_link" default="iiwa_link_ee"/>
   <arg name="ros_rate" default="50"/>
 

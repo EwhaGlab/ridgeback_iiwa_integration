@@ -132,5 +132,5 @@ Then, run the nodes for programming ridgeback and iiwa.
 
 ```sh
 rosrun ridgeback_examples teleop_key.py
-rosrun ridgeback_iiwa_manipulation simple_manipulation
+rosrun iiwa_examples up_down_moveit
 ```

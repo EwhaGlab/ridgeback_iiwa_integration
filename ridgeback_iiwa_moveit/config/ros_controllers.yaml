@@ -1,6 +1,6 @@
 # Simulation settings for using moveit_sim_controllers
 moveit_sim_hw_interface:
-  joint_model_group: arm
+  joint_model_group: manipulator
   joint_model_group_pose: drawing
 # Settings for ros_control_boilerplate control loop
 generic_hw_control_loop:
@@ -9,11 +9,6 @@ generic_hw_control_loop:
 # Settings for ros_control hardware interface
 hardware_interface:
   joints:
-    - front_rocker
-    - front_left_wheel
-    - front_right_wheel
-    - rear_left_wheel
-    - rear_right_wheel
     - iiwa_joint_1
     - iiwa_joint_2
     - iiwa_joint_3
