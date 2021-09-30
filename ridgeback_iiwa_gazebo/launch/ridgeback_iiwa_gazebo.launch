@@ -3,7 +3,7 @@
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="joystick" default="true" />
-  <arg name="world_name" default="$(find ridgeback_iiwa_gazebo)/worlds/ridgeback_race.world" />
+  <arg name="world_name" default="$(find ridgeback_iiwa_gazebo)/worlds/smooth_curve_world.world" />
 
 <!--   <rosparam file="$(find ridgeback_iiwa_gazebo)/config/gazebo_controller.yaml" command="load"/> -->
 
