@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <model name="wood_bee_hive_wall">
+      <pose>0 0 0  0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+        <collision name='collision'>
+          <geometry>
+            <mesh><uri>model://worlds/mesh/wood_bee_hive.stl</uri></mesh>
+          </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://worlds/mesh/wood_bee_hive.stl</uri>
+              <scale>1.0 1.0 1.0</scale>
+          </mesh>
+          </geometry>
+      </visual>
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.145833</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.145833</iyy>
+          <iyz>0</iyz>
+          <izz>0.125</izz>
+        </inertia>
+      </inertial>
+      </link>
+    </model>
+  </world>
+</sdf>
