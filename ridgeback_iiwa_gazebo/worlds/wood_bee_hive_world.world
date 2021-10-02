@@ -8,21 +8,26 @@
       <uri>model://sun</uri>
     </include>
     <model name="wood_bee_hive_wall">
-      <pose>0 0 0  0 0 0</pose>
+      <pose>3 0 0  0 0 0</pose>
       <static>true</static>
       <link name="body">
         <collision name='collision'>
           <geometry>
-            <mesh><uri>model://worlds/mesh/wood_bee_hive.stl</uri></mesh>
+            <mesh><uri>model://worlds/mesh/bee_hive_2.stl</uri></mesh>
           </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://worlds/mesh/wood_bee_hive.stl</uri>
+            <uri>model://worlds/mesh/bee_hive_2.stl</uri>
               <scale>1.0 1.0 1.0</scale>
           </mesh>
           </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
       </visual>
       <inertial>
         <mass>1</mass>
