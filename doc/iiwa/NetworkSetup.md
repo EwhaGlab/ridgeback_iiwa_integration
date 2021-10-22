@@ -10,7 +10,7 @@ We are setting up your **PC** as a **ROS_MASTER**.
 
 1. Make sure the ethernet cable is connected to **X66 port** of SUNRISE Cabinet. 
 
-2. **(Wired)** Connect network cable to your PC or **(Wireless)** Connect your PC wifi to **COM_GR_5G**.   
+2. **(Wired)** Connect network cable to your PC or **(Wireless)** Connect your PC wifi to **iptime_iiwa**.   
    Manually setup the network as below:
 
 	|  Address           | Netmask         | Gateway         |
@@ -31,7 +31,7 @@ We are setting up **Ridgeback** as a **ROS_MASTER**.
 
 1. Make sure the ethernet cable is connected to **X66 port** of SUNRISE Cabinet. 
 
-2. **(Wireless)** Connect your PC wifi to **COM_GR_5G**.   
+2. **(Wireless)** Connect your PC wifi to **iptime_iiwa**.   
    Manually setup the network as below:
 
 	|  Address           | Netmask         | Gateway         |
@@ -56,5 +56,5 @@ We are setting up **Ridgeback** as a **ROS_MASTER**.
 
 - Check if the ethernet cable is well connected to **X66 port** of SUNRISE Cabinet with the router.
 - Check the IP address that iiwa is waiting for when running ROSSmartServo application.
-- Check if your PC is correctly connected to the wifi **COM_GR_5G**.
+- Check if your PC is correctly connected to the wifi **iptime_iiwa**.
 - Check if your PC IP address is correctly configured. Use ```ifconfig```.
