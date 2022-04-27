@@ -4,7 +4,7 @@
 
 <img src="./doc/img/demo.png" width="600">
 
-This repository provides our customed ridgeback integration with KUKA LBR iiwa 7 R800 based on [ridgeback_manipulation](https://github.com/ridgeback/ridgeback_manipulation) and [turtlebot3_manipulation](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation). 
+This repository provides our customed ridgeback integration with KUKA LBR iiwa 7 R800. 
 
 
 ## Build and Compile
@@ -41,9 +41,11 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
   rosdep install --from-paths src --ignore-src -r -y
   ```
 
-6. Add a following line in ~/.bashrc:
+6. Add a parameter for robot description:
 
-`export RIDGEBACK_URDF_EXTRAS=$(catkin_find ridgeback_iiwa_description urdf/ridgeback_iiwa_robot.urdf.xacro --first-only)`
+```sh
+echo "export RIDGEBACK_URDF_EXTRAS=$(catkin_find ridgeback_iiwa_description urdf/ridgeback_iiwa_robot.urdf.xacro --first-only)" >> ~/.bashrc
+```
 
 7. Build the workspace:
   ```sh
@@ -72,3 +74,10 @@ roslaunch ridgeback_iiwa_gazebo ridgeback_iiwa_gazebo.launch
 roslaunch ridgeback_iiwa_manipulation mobile_manipulation_interactive_demo.launch
 ```
 
+## References
+- [ridgeback_manipulation](https://github.com/ridgeback/ridgeback_manipulation)
+- [turtlebot3_manipulation](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation)
+
+## Contact
+All bug reports, feedback, comments, contributions or remarks are welcome.
+- [Daeun Song](http://daeunsong.github.io), Ewha Womans University
