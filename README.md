@@ -41,22 +41,23 @@ This repository provides our customed ridgeback integration with KUKA LBR iiwa 7
   rosdep install --from-paths src --ignore-src -r -y
   ```
 
-6. Add a parameter for robot description:
+6. Build the workspace:
+  ```sh
+  catkin build
+  ```
+  
+7. Add a parameter for robot description:
 
 ```sh
 echo "export RIDGEBACK_URDF_EXTRAS=$(catkin_find ridgeback_iiwa_description urdf/ridgeback_iiwa_robot.urdf.xacro --first-only)" >> ~/.bashrc
 ```
 
-7. Build the workspace:
-  ```sh
-  catkin build
-  ```
 
 8. Source the workspace:
   ```sh
   source devel/setup.bash
   ```
-   You can also add this line in ~/.bashrc, but be aware that this has to be above the line in step 6.
+   You can also add this line in ~/.bashrc, but be aware that this has to be above the line in step 7.
 
 
 ## Demo
