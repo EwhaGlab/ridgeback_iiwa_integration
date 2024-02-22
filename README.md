@@ -4,7 +4,7 @@
 
 <img src="./doc/img/demo.png" width="600">
 
-This repository provides our customed ridgeback integration with KUKA LBR iiwa 7 R800. 
+This repository provides our customed ridgeback integration with KUKA LBR iiwa 7 R800. Supporting [Moveit!](https://moveit.ros.org/) and [ROS navigation stack](https://github.com/ros-planning/navigation).
 
 
 ## Build and Compile
